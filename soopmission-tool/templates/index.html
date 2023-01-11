@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>Select Task</h1>
+    <ul>
+        {% for task in task_data recursive %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
