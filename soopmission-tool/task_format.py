@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, json, current_app
+from flask import Blueprint, render_template, json, current_app, request, flash
 
 import os
 
@@ -7,10 +7,16 @@ bp = Blueprint('task_format', __name__, url_prefix='/upload')
 @bp.route('/<task_id>', methods=('GET', 'POST'))
 def upload_task(task_id):
     #TODO: add 404 page for invalid task id
-    
     task_data = get_task_data(task_id)
     name = task_data['name']
     upload_requirements = task_data['upload_requirements']
+
+    if request.method == 'POST':
+        for requirement in upload_requirements:
+            uploaded_file = request.files[requirement]
+            uploaded_file.save(uploaded_file.filename)
+            # flash('Got it!')
+
     return render_template('task_format/upload.html', task_id=task_id, name=name, upload_requirements=upload_requirements)
 
 

@@ -1,16 +1,23 @@
 {
+    "1-0" : {
+        "name": "Testing",
+        "upload_requirements": {
+            "A text file": ".txt"
+        }
+    },
     "1-1" : {
         "name": "1.1P - Stuff and Things",
         "upload_requirements": {
-            "key1": "value1",
-            "key2": "value2"    
+            "Hello class": ".cs",
+            "Screenshot": "image/*"    
         }
     },
     "1-2" : {
         "name": "1.2C - Other Stuff",
         "upload_requirements": {
-            "t2key1": "t2value1",
-            "t2key2": "t2value2"
+            "Design notes": ".pdf",
+            "Link": ".txt",
+            "UML diagram": "image/*"
         }
     }
 }
