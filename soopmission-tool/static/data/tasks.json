@@ -1,13 +1,13 @@
 {
     "1-1" : {
-        "name": "Task 1",
+        "name": "1.1P - Stuff and Things",
         "upload_requirements": {
             "key1": "value1",
             "key2": "value2"    
         }
     },
     "1-2" : {
-        "name": "Task 2",
+        "name": "1.2C - Other Stuff",
         "upload_requirements": {
             "t2key1": "t2value1",
             "t2key2": "t2value2"
