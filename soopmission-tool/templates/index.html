@@ -3,8 +3,8 @@
 {% block header %}
     <h1>Select Task</h1>
     <ul>
-        {% for task in task_data recursive %}
-            <li>{{ task }}</li>
+        {% for task in task_data %}
+            <li>{{ task_data[task]['name'] }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

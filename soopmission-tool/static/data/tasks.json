@@ -1,10 +1,16 @@
 {
-    "Task 1" : {
-        "key1": "value1",
-        "key2": "value2"
+    "1-1" : {
+        "name": "Task 1",
+        "upload_requirements": {
+            "key1": "value1",
+            "key2": "value2"    
+        }
     },
-    "Task 2" : {
-        "t2key1": "t2value1",
-        "t2key2": "t2value2"
+    "1-2" : {
+        "name": "Task 2",
+        "upload_requirements": {
+            "t2key1": "t2value1",
+            "t2key2": "t2value2"
+        }
     }
 }
