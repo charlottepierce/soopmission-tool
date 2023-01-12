@@ -4,7 +4,7 @@
     <h1>Select Task</h1>
     <ul>
         {% for task in task_data %}
-            <li>{{ task_data[task]['name'] }}</li>
+            <li><a href="{{ url_for('task_format.upload_task', task_id=task) }}">{{ task_data[task]['name'] }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

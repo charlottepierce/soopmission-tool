@@ -6,6 +6,8 @@ bp = Blueprint('task_format', __name__, url_prefix='/upload')
 
 @bp.route('/<task_id>', methods=('GET', 'POST'))
 def upload_task(task_id):
+    #TODO: add 404 page for invalid task id
+    
     task_data = get_task_data(task_id)
     name = task_data['name']
     upload_requirements = task_data['upload_requirements']
