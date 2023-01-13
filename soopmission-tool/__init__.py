@@ -13,7 +13,7 @@ def create_app():
 
     # ensure the uploads folder exists
     try:
-        os.makedirs(app.config['UPLOAD_FOLDER'])
+        os.makedirs(os.path.join(app.root_path, app.config['UPLOAD_FOLDER']))
     except:
         pass
 
