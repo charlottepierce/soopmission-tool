@@ -5,6 +5,12 @@
             "A text file": ".txt"
         }
     },
+    "Image" : {
+        "name": "Image task",
+        "upload_requirements": {
+            "An image": "image/*"
+        }
+    },
     "1-1" : {
         "name": "1.1P - Stuff and Things",
         "upload_requirements": {

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, json, current_app, request, flash
 
-import os
+import os, uuid
 
 bp = Blueprint('task_format', __name__, url_prefix='/upload')
 
@@ -13,9 +13,13 @@ def upload_task(task_id):
     upload_requirements = task_data['upload_requirements']
 
     if request.method == 'POST':
+        processing_folder = os.path.join(current_app.config['UPLOAD_FOLDER'], uuid.uuid4().hex)
+        os.makedirs(processing_folder)
         for requirement in upload_requirements:
             uploaded_file = request.files[requirement]
-            uploaded_file.save(uploaded_file.filename)
+            _, extension = os.path.splitext(uploaded_file.filename)
+            filename = requirement + extension
+            uploaded_file.save(os.path.join(processing_folder, filename))
             flash('Got it!')
 
     return render_template('task_format/upload.html', task_id=task_id, name=name, upload_requirements=upload_requirements)

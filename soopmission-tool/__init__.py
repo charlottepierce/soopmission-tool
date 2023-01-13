@@ -7,8 +7,15 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
+        UPLOAD_FOLDER='uploads'
     )
     # TODO override with production config when available
+
+    # ensure the uploads folder exists
+    try:
+        os.makedirs(app.config['UPLOAD_FOLDER'])
+    except:
+        pass
 
     from . import task_format
     app.register_blueprint(task_format.bp)
