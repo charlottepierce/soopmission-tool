@@ -27,7 +27,7 @@ def upload_task(task_id):
             uploaded_file.save(os.path.join(processing_folder, filename))
             make_pdf(upload_requirements, processing_folder, task_name)
             flash('Got it!')
-            # TODO: return pdf to user
+            # TODO: return pdf to user, named based on task
             # TODO: remove temp files 
 
     return render_template('task_format/upload.html', task_id=task_id, name=task_name, upload_requirements=upload_requirements)
@@ -35,6 +35,7 @@ def upload_task(task_id):
 
 def make_pdf(upload_requirements, processing_folder, task_name):
     # TODO: detect and handle when tex compile fails
+    # TODO: add in actual task content
     template_file = os.path.join(current_app.root_path, 'static/mako/submission_pdf.tmpl')
     tex_template = Template(filename=template_file)
     tex_text = tex_template.render(upload_requirements=upload_requirements, task_name=task_name)
