@@ -10,7 +10,7 @@
         {% for requirement in upload_requirements %}
             <p>
                 <label for="{{ requirement }}">{{ requirement }}</label>
-                <input type="file" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement] }}" />
+                <input type="file" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" />
             </p>
         {% endfor %}
         <input type="submit"/>

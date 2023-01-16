@@ -2,28 +2,49 @@
     "1-0" : {
         "name": "Testing",
         "upload_requirements": {
-            "A text file": ".txt"
+            "A text file": {
+                "type": "code",
+                "restriction": ".txt"
+            }
         }
     },
     "Image" : {
         "name": "Image task",
         "upload_requirements": {
-            "An image": "image/*"
+            "An image": {
+                "type": "image",
+                "restriction": "image/*"
+            } 
         }
     },
     "1-1" : {
         "name": "1.1P - Stuff and Things",
         "upload_requirements": {
-            "Hello class": ".cs",
-            "Screenshot": "image/*"    
+            "Hello class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot": {
+                "type": "image",
+                "restriction": "image/*"
+            }
         }
     },
     "1-2" : {
         "name": "1.2C - Other Stuff",
         "upload_requirements": {
-            "Design notes": ".pdf",
-            "Link": ".txt",
-            "UML diagram": "image/*"
+            "Design notes": {
+                "type": "document",
+                "restriction": ".pdf"
+            },
+            "Link": {
+                "type": "code",
+                "restriction": ".txt"
+            },
+            "UML diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            }
         }
     }
 }

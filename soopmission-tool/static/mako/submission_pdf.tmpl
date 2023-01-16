@@ -58,9 +58,17 @@
   
   \pagestyle{body}
   % for f in files:
-    ${loop.index + 1}
     \fancyhead[L]{ File ${loop.index + 1} of ${len(files)} }
     \fancyhead[R]{ ${f.name} }
+
+    % if f.type == "code":
+        this file is code with extension ${f.extension}
+    % elif f.type == "image":
+        this file is an image with extension ${f.extension}
+    % elif f.type == "document":
+        this file is a document with extension ${f.extension}
+    % endif
+
     \clearpage
   % endfor
   

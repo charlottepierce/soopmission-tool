@@ -6,9 +6,11 @@ import os, uuid, subprocess
 bp = Blueprint('task_format', __name__, url_prefix='/upload')
 
 class SubmissionFile(object):
-    def __init__(self, name, file_path):
+    def __init__(self, name, file_path, type, extension):
         self.name = name
         self.file_path = file_path
+        self.type = type
+        self.extension = extension
 
 
 @bp.route('/<task_id>', methods=('GET', 'POST'))
@@ -32,7 +34,7 @@ def upload_task(task_id):
             _, extension = os.path.splitext(uploaded_file.filename)
             filename = requirement + extension
             filepath = os.path.join(processing_folder, filename)
-            files.append(SubmissionFile(requirement, filepath))
+            files.append(SubmissionFile(requirement, filepath, upload_requirements[requirement]["type"], extension))
             uploaded_file.save(filepath)
             make_pdf(files, task_name, processing_folder)
             flash('Got it!')
