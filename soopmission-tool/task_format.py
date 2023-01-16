@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, json, current_app, request, flash, send_file
+from flask import Blueprint, render_template, json, current_app, request, flash, send_file, abort
 from mako.template import Template
 
 import os
@@ -25,9 +25,11 @@ class SubmissionFile(object):
 
 @bp.route('/<task_id>', methods=('GET', 'POST'))
 def upload_task(task_id):
-    # TODO: add 404 page for invalid task id
     # TODO: submit clicked and not all files sent
     task_data = get_task_data(task_id)
+    if not task_data:
+        abort(404)
+
     task_name = task_data['name']
     upload_requirements = task_data['upload_requirements']
 
@@ -88,7 +90,10 @@ def get_task_data(task_id=None):
     tasks_file_url = os.path.join(current_app.root_path, 'static/data/tasks.json')
     all_task_data = json.load(open(tasks_file_url))
     if task_id:
-        return all_task_data[task_id]
+        if task_id in all_task_data.keys():
+            return all_task_data[task_id]
+        else:
+            return None
     
     return all_task_data
     
