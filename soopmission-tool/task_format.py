@@ -5,6 +5,12 @@ import os, uuid, subprocess
 
 bp = Blueprint('task_format', __name__, url_prefix='/upload')
 
+class SubmissionFile(object):
+    def __init__(self, name, file_path):
+        self.name = name
+        self.file_path = file_path
+
+
 @bp.route('/<task_id>', methods=('GET', 'POST'))
 def upload_task(task_id):
     # TODO: add 404 page for invalid task id
@@ -20,12 +26,15 @@ def upload_task(task_id):
             os.makedirs(processing_folder)
         except:
             pass
+        files = []
         for requirement in upload_requirements:
             uploaded_file = request.files[requirement]
             _, extension = os.path.splitext(uploaded_file.filename)
             filename = requirement + extension
-            uploaded_file.save(os.path.join(processing_folder, filename))
-            make_pdf(upload_requirements, processing_folder, task_name)
+            filepath = os.path.join(processing_folder, filename)
+            files.append(SubmissionFile(requirement, filepath))
+            uploaded_file.save(filepath)
+            make_pdf(files, task_name, processing_folder)
             flash('Got it!')
             # TODO: return pdf to user, named based on task
             # TODO: remove temp files 
@@ -33,12 +42,12 @@ def upload_task(task_id):
     return render_template('task_format/upload.html', task_id=task_id, name=task_name, upload_requirements=upload_requirements)
 
 
-def make_pdf(upload_requirements, processing_folder, task_name):
+def make_pdf(files, task_name, processing_folder):
     # TODO: detect and handle when tex compile fails
     # TODO: add in actual task content
     template_file = os.path.join(current_app.root_path, 'static/mako/submission_pdf.tmpl')
     tex_template = Template(filename=template_file)
-    tex_text = tex_template.render(upload_requirements=upload_requirements, task_name=task_name)
+    tex_text = tex_template.render(files=files, task_name=task_name)
     
     out_file_path = os.path.join(current_app.root_path, processing_folder)
     out_file_uri = os.path.join(out_file_path, "compile.tex")

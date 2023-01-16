@@ -57,6 +57,11 @@
   \end{titlepage}
   
   \pagestyle{body}
-  Stuff
-
+  % for f in files:
+    ${loop.index + 1}
+    \fancyhead[L]{ File ${loop.index + 1} of ${len(files)} }
+    \fancyhead[R]{ ${f.name} }
+    \clearpage
+  % endfor
+  
 \end{document}
