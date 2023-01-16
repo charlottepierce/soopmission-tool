@@ -25,7 +25,6 @@ class SubmissionFile(object):
 
 @bp.route('/<task_id>', methods=('GET', 'POST'))
 def upload_task(task_id):
-    # TODO: submit clicked and not all files sent
     task_data = get_task_data(task_id)
     if not task_data:
         abort(404)
@@ -60,7 +59,7 @@ def upload_task(task_id):
             return send_file(return_data, "application/pdf", True, task_name+".pdf")
         else:
             shutil.rmtree(processing_folder, ignore_errors=True)
-            flash("Something went wrong formatting your submission. Please check the files and try again. Make sure your files don't have special characters and are in the correct format. If the issue persists please contact your convener.")
+            flash("Something went wrong formatting your submission. Please check the files and try again. Make sure you uploaded all the files, they don't have special characters, and are in the correct format. If the issue persists please contact your convener.")
 
     return render_template('task_format/upload.html', task_id=task_id, name=task_name, upload_requirements=upload_requirements)
 
