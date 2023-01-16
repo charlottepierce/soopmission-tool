@@ -49,20 +49,23 @@ def upload_task(task_id):
             uploaded_file.save(filepath)
 
         generated_file_path = make_pdf(files, task_name, processing_folder)
-        # read compiled pdf into memory so temp files can be deleted ASAP before returning
-        return_data = io.BytesIO()
-        with open(generated_file_path, 'rb') as f:
-            return_data.write(f.read())
-            return_data.seek(0)
-        
-        shutil.rmtree(processing_folder, ignore_errors=True)
-        return send_file(return_data, "application/pdf", True, task_name+".pdf")
+        if generated_file_path:
+            # read compiled pdf into memory so temp files can be deleted ASAP before returning
+            return_data = io.BytesIO()
+            with open(generated_file_path, 'rb') as f:
+                return_data.write(f.read())
+                return_data.seek(0)
+            
+            shutil.rmtree(processing_folder, ignore_errors=True)
+            return send_file(return_data, "application/pdf", True, task_name+".pdf")
+        else:
+            shutil.rmtree(processing_folder, ignore_errors=True)
+            flash("Something went wrong formatting your submission. Please check the files and try again. Make sure your files don't have special characters and are in the correct format. If the issue persists please contact your convener.")
 
     return render_template('task_format/upload.html', task_id=task_id, name=task_name, upload_requirements=upload_requirements)
 
 
 def make_pdf(files, task_name, processing_folder):
-    # TODO: detect and handle when tex compile fails
     template_file = os.path.join(current_app.root_path, 'static/mako/submission_pdf.tmpl')
     tex_template = Template(filename=template_file)
     tex_text = tex_template.render(files=files, task_name=task_name)
@@ -73,12 +76,15 @@ def make_pdf(files, task_name, processing_folder):
         out_file.write(tex_text)
 
     # run twice to resolve page counts and get cross-references right
-    subprocess.run(["pdflatex", "-shell-escape", tex_file_uri], cwd=tex_file_path)
-    subprocess.run(["pdflatex", "-shell-escape", tex_file_uri], cwd=tex_file_path)
+    subprocess.run(["pdflatex", "-shell-escape", "-halt-on-error", tex_file_uri], cwd=tex_file_path)
+    subprocess.run(["pdflatex", "-shell-escape", "-halt-on-error", tex_file_uri], cwd=tex_file_path)
 
     generated_file_uri = os.path.join(processing_folder, "compile.pdf")
 
-    return generated_file_uri
+    if os.path.exists(generated_file_uri):
+        return generated_file_uri
+    else:
+        return None
 
 
 def get_task_data(task_id=None):
