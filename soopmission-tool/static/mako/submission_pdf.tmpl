@@ -66,7 +66,7 @@
     % elif f.type == "image":
         \includegraphics[width=\textwidth]{${f.file_path}}
     % elif f.type == "document":
-        this file is a document with extension ${f.extension}
+        \includepdf[pages={1-}]{${f.file_path}}
     % endif
 
     \clearpage
