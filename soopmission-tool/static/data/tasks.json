@@ -1,6 +1,6 @@
 {
-    "1-0" : {
-        "name": "Testing",
+    "Just txt" : {
+        "name": "Testing txt",
         "upload_requirements": {
             "A text file": {
                 "type": "code",
@@ -8,12 +8,30 @@
             }
         }
     },
-    "Image" : {
+    "Just cs" : {
+        "name": "Testing cs",
+        "upload_requirements": {
+            "A text file": {
+                "type": "code",
+                "restriction": ".cs"
+            }
+        }
+    },
+    "Just Image" : {
         "name": "Image task",
         "upload_requirements": {
             "An image": {
                 "type": "image",
                 "restriction": "image/*"
+            } 
+        }
+    },
+    "Just Doc" : {
+        "name": "Doc task",
+        "upload_requirements": {
+            "A document": {
+                "type": "document",
+                "restriction": ".pdf"
             } 
         }
     },

@@ -12,6 +12,12 @@ class SubmissionFile(object):
         self.type = type
         self.extension = extension
 
+    def pygments_lang(self):
+        if self.extension == ".cs":
+            return "csharp"
+        else:
+            return "text"
+
 
 @bp.route('/<task_id>', methods=('GET', 'POST'))
 def upload_task(task_id):
@@ -32,7 +38,7 @@ def upload_task(task_id):
         for requirement in upload_requirements:
             uploaded_file = request.files[requirement]
             _, extension = os.path.splitext(uploaded_file.filename)
-            filename = requirement + extension
+            filename = requirement.replace(" ", "") + extension
             filepath = os.path.join(processing_folder, filename)
             files.append(SubmissionFile(requirement, filepath, upload_requirements[requirement]["type"], extension))
             uploaded_file.save(filepath)
@@ -56,7 +62,7 @@ def make_pdf(files, task_name, processing_folder):
     with open(out_file_uri, 'w') as out_file:
         out_file.write(tex_text)
 
-    # run twice to resolve page counts
+    # run twice to resolve page counts and get cross-references right
     subprocess.run(["pdflatex", "-shell-escape", out_file_uri], cwd=out_file_path)
     subprocess.run(["pdflatex", "-shell-escape", out_file_uri], cwd=out_file_path)
 
