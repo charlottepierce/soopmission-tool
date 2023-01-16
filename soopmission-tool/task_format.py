@@ -1,7 +1,11 @@
 from flask import Blueprint, render_template, json, current_app, request, flash, send_file
 from mako.template import Template
 
-import os, uuid, subprocess
+import os
+import uuid
+import subprocess
+import io
+import shutil
 
 bp = Blueprint('task_format', __name__, url_prefix='/upload')
 
@@ -28,8 +32,7 @@ def upload_task(task_id):
     upload_requirements = task_data['upload_requirements']
 
     if request.method == 'POST':
-        # processing_folder = os.path.join(current_app.root_path, current_app.config['UPLOAD_FOLDER'], uuid.uuid4().hex)
-        processing_folder = os.path.join(current_app.root_path, current_app.config['UPLOAD_FOLDER'], "1") # hard-code for a minute while working so you don't have to keep switching folders
+        processing_folder = os.path.join(current_app.root_path, current_app.config['UPLOAD_FOLDER'], uuid.uuid4().hex)
         try:
             os.makedirs(processing_folder)
         except:
@@ -44,8 +47,14 @@ def upload_task(task_id):
             uploaded_file.save(filepath)
 
         generated_file_path = make_pdf(files, task_name, processing_folder)
-        return send_file(generated_file_path, "application/pdf", True, task_name+".pdf")
-        # TODO: remove temp files 
+        # read compiled pdf into memory so temp files can be deleted ASAP before returning
+        return_data = io.BytesIO()
+        with open(generated_file_path, 'rb') as f:
+            return_data.write(f.read())
+            return_data.seek(0)
+        
+        shutil.rmtree(processing_folder, ignore_errors=True)
+        return send_file(return_data, "application/pdf", True, task_name+".pdf")
 
     return render_template('task_format/upload.html', task_id=task_id, name=task_name, upload_requirements=upload_requirements)
 
