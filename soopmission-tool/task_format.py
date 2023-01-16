@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, json, current_app, request, flash
+from flask import Blueprint, render_template, json, current_app, request, flash, send_file
 from mako.template import Template
 
 import os, uuid, subprocess
@@ -42,10 +42,10 @@ def upload_task(task_id):
             filepath = os.path.join(processing_folder, filename)
             files.append(SubmissionFile(requirement, filepath, upload_requirements[requirement]["type"], extension))
             uploaded_file.save(filepath)
-            make_pdf(files, task_name, processing_folder)
-            flash('Got it!')
-            # TODO: return pdf to user, named based on task
-            # TODO: remove temp files 
+
+        generated_file_path = make_pdf(files, task_name, processing_folder)
+        return send_file(generated_file_path, "application/pdf", True, task_name+".pdf")
+        # TODO: remove temp files 
 
     return render_template('task_format/upload.html', task_id=task_id, name=task_name, upload_requirements=upload_requirements)
 
@@ -56,14 +56,18 @@ def make_pdf(files, task_name, processing_folder):
     tex_template = Template(filename=template_file)
     tex_text = tex_template.render(files=files, task_name=task_name)
     
-    out_file_path = os.path.join(current_app.root_path, processing_folder)
-    out_file_uri = os.path.join(out_file_path, "compile.tex")
-    with open(out_file_uri, 'w') as out_file:
+    tex_file_path = os.path.join(current_app.root_path, processing_folder)
+    tex_file_uri = os.path.join(tex_file_path, "compile.tex")
+    with open(tex_file_uri, 'w') as out_file:
         out_file.write(tex_text)
 
     # run twice to resolve page counts and get cross-references right
-    subprocess.run(["pdflatex", "-shell-escape", out_file_uri], cwd=out_file_path)
-    subprocess.run(["pdflatex", "-shell-escape", out_file_uri], cwd=out_file_path)
+    subprocess.run(["pdflatex", "-shell-escape", tex_file_uri], cwd=tex_file_path)
+    subprocess.run(["pdflatex", "-shell-escape", tex_file_uri], cwd=tex_file_path)
+
+    generated_file_uri = os.path.join(processing_folder, "compile.pdf")
+
+    return generated_file_uri
 
 
 def get_task_data(task_id=None):
