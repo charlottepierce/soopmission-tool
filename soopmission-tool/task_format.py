@@ -52,7 +52,6 @@ def upload_task(task_id):
 
 def make_pdf(files, task_name, processing_folder):
     # TODO: detect and handle when tex compile fails
-    # TODO: add in actual task content
     template_file = os.path.join(current_app.root_path, 'static/mako/submission_pdf.tmpl')
     tex_template = Template(filename=template_file)
     tex_text = tex_template.render(files=files, task_name=task_name)
