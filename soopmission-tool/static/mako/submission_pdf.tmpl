@@ -64,7 +64,7 @@
     % if f.type == "code":
         this file is code with extension ${f.extension}
     % elif f.type == "image":
-        this file is an image with extension ${f.extension}
+        \includegraphics[width=\textwidth]{${f.file_path}}
     % elif f.type == "document":
         this file is a document with extension ${f.extension}
     % endif
