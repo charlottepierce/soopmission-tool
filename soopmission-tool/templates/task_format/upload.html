@@ -9,7 +9,7 @@
     <form action="{{ url_for('task_format.upload_task', task_id=task_id) }}" method="POST" enctype = "multipart/form-data">
         {% for requirement in upload_requirements %}
             <div class="form-group">
-                <label for="{{ requirement }}">{{ requirement }}</label>
+                <label for="{{ requirement }}">{{ requirement }} ({{ upload_requirements[requirement]['type'] }})</label>
                 <input type="file" class="form-control-file" style="margin: 0 auto;" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" />
             </div>
         {% endfor %}
