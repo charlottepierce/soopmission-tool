@@ -2,9 +2,9 @@
 
 {% block header %}
     <h1>Select Task</h1>
-    <ul>
+    <div class="btn-group-vertical">
         {% for task in task_data %}
-            <li><a href="{{ url_for('task_format.upload_task', task_id=task) }}">{{ task_data[task]['name'] }}</a></li>
+            <button style="margin-bottom:10px; border-radius:10px !important;" type="button" class="btn btn-primary" onclick="location.href='{{ url_for('task_format.upload_task', task_id=task) }}'">{{ task_data[task]['name'] }}</button>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

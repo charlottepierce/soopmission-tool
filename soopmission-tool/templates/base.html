@@ -13,14 +13,16 @@
         <script src="{{ url_for('static', filename='jquery-3.6.3.min.js') }}"></script>
         <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
 
-        <section class="content">
+        <div class="text-center">
             <header>
                 {% block header %}{% endblock %}
             </header>
+
             {% for message in get_flashed_messages() %}
                 <div class="flash">{{ message }}</div>
             {% endfor %}
+
             {% block content %}{% endblock %}
-        </section>
+        </div>
     </body>
 </html>
