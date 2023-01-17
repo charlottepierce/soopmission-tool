@@ -2,16 +2,16 @@
 {% block title %} - Upload Task {{ name }}{% endblock %}
 
 {% block header %}
-    <h1>Upload files for Task {{ name }}</h1>
+    <h1>Upload files for Task '{{ name }}'</h1>
 {% endblock %}
 
 {% block content %}
     <form action="{{ url_for('task_format.upload_task', task_id=task_id) }}" method="POST" enctype = "multipart/form-data">
         {% for requirement in upload_requirements %}
-            <p>
+            <div class="form-group">
                 <label for="{{ requirement }}">{{ requirement }}</label>
-                <input type="file" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" />
-            </p>
+                <input type="file" class="form-control-file" style="margin: 0 auto;" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" />
+            </div>
         {% endfor %}
         <input type="submit"/>
     </form>
