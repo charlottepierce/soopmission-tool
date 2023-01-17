@@ -11,7 +11,7 @@
     "Just cs" : {
         "name": "Testing cs",
         "upload_requirements": {
-            "A text file": {
+            "A code file": {
                 "type": "code",
                 "restriction": ".cs"
             }
