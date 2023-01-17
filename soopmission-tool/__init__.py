@@ -7,7 +7,8 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        UPLOAD_FOLDER='uploads'
+        UPLOAD_FOLDER='uploads',
+        MAX_CONTENT_LENGTH = 10 * 1024 * 1024
     )
     # TODO override with production config when available
 
