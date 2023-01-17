@@ -6,13 +6,16 @@
 {% endblock %}
 
 {% block content %}
-    <form action="{{ url_for('task_format.upload_task', task_id=task_id) }}" method="POST" enctype = "multipart/form-data">
-        {% for requirement in upload_requirements %}
-            <div class="form-group">
-                <label for="{{ requirement }}">{{ requirement }} ({{ upload_requirements[requirement]['type'] }})</label>
-                <input type="file" class="form-control-file" style="margin: 0 auto;" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" />
-            </div>
-        {% endfor %}
-        <input type="submit" class="btn btn-success" value="Format submission"/>
-    </form>
+</script>
+    <div class="mx-auto" style="width: 500px;">
+        <form id="file-upload" action="{{ url_for('task_format.upload_task', task_id=task_id) }}" method="POST" enctype="multipart/form-data">
+            {% for requirement in upload_requirements %}
+                <div class="form-group" style="margin-bottom:10px; border-radius:10px;">
+                    <label for="{{ requirement }}">{{ requirement }} ({{ upload_requirements[requirement]['type'] }})</label>
+                    <input type="file" class="form-control" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" required/>
+                </div>
+            {% endfor %}
+            <input type="submit" id="submit-btn" class="btn btn-success" value="Format submission"/>
+        </form>
+    </div>
 {% endblock %}

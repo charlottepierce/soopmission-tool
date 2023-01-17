@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>Select Task</h1>
-    <div class="btn-group-vertical">
-        {% for task in task_data %}
-            <button style="margin-bottom:10px; border-radius:10px;" type="button" class="btn btn-primary" onclick="location.href='{{ url_for('task_format.upload_task', task_id=task) }}'">{{ task_data[task]['name'] }}</button>
-        {% endfor %}
+    <div class="text-center">
+        <h1>Select Task</h1>
+        <div class="btn-group-vertical">
+            {% for task in task_data %}
+                <button style="margin-bottom:10px; border-radius:10px;" type="button" class="btn btn-primary" onclick="location.href='{{ url_for('task_format.upload_task', task_id=task) }}'">{{ task_data[task]['name'] }}</button>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
