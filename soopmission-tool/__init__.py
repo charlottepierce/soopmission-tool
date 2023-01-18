@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 # the application factory function
 def create_app():
@@ -25,5 +25,9 @@ def create_app():
     def index():
         task_data = task_format.get_task_data()
         return render_template('index.html', task_data=task_data)
+
+    @app.route('/robots.txt')
+    def robots_file():
+        return send_from_directory("static", "robots.txt")
 
     return app
