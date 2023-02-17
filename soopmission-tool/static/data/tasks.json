@@ -1,13 +1,35 @@
 {
-    "Just txt" : {
-        "name": "Testing txt",
+    "1.1P" : {
+        "name": "1.1P: Preparing for Object Oriented Programming",
         "upload_requirements": {
-            "A text file": {
-                "type": "code",
-                "restriction": ".txt"
+            "Answer sheet": {
+                "type": "document",
+                "restriction": ".pdf"
             }
         }
     },
+    "1.2P" : {
+        "name": "1.2P - Object Oriented Hello World",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Message class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Screenshot of IDE with breakpoint": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
+    },
+
     "Just cs" : {
         "name": "Testing cs",
         "upload_requirements": {
