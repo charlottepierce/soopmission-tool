@@ -100,5 +100,72 @@
                 "restriction": "image/*"
             }
         }
+    },
+    "3.1P" : {
+        "name": "3.1P - Clock Class",
+        "upload_requirements": {
+            "UML class diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Clock class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Clock tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Counter class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Counter tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot showing unit tests passing": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
+    },
+    "3.2P" : {
+        "name": "3.2P - The Stack and Heap",
+        "upload_requirements": {
+            "Answer sheet": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
+    },
+    "3.3P" : {
+        "name": "3.3P - Drawing Program - A Drawing Class",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Drawing class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Shape class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
     }
 }
