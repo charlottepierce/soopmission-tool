@@ -412,6 +412,10 @@
             "Screenshot showing unit tests passing": {
                 "type": "image",
                 "restriction": "image/*"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
             }
         }
     },
@@ -499,6 +503,10 @@
             "Screenshot showing unit tests passing": {
                 "type": "image",
                 "restriction": "image/*"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
             }
         }
     },
@@ -509,6 +517,39 @@
                 "type": "document",
                 "restriction": ".pdf"
             }           
+        }
+    },
+    "10.1C" : {
+        "name": "10.1C - Case Study - Iteration 8 - Command Processor",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "CommandProcessor class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "CommandProcessor tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "UML class diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "UML sequence diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Screenshot showing unit tests passing": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
         }
     }
 }
