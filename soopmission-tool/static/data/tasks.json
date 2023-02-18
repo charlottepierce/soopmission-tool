@@ -360,5 +360,59 @@
                 "restriction": ".pdf"
             }
         }
+    },
+    "7.1P" : {
+        "name": "7.1P - Case Study -  Iteration 5 - Tying it Together",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
+    },
+    "7.2C" : {
+        "name": "7.2C - Case Study - Iteration 6 - Locations",
+        "upload_requirements": {
+            "Location class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Location tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Player class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Player tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "LookCommand class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "LookCommand tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "UML class diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "UML sequence diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Screenshot showing unit tests passing": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
     }
 }
