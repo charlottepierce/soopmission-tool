@@ -551,5 +551,18 @@
                 "restriction": "image/*"
             }
         }
+    },
+    "11.1P" : {
+        "name": "11.1P - Clock in Another Language",
+        "upload_requirements": {
+            "Code": {
+                "type": "code",
+                "restriction": ".txt"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
     }
 }
