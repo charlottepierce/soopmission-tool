@@ -414,5 +414,42 @@
                 "restriction": "image/*"
             }
         }
+    },
+    "T1" : {
+        "name": "T1 - Semester Test",
+        "upload_requirements": {
+            "UML class diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "DataAnalyser class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "SummaryStrategy class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "MinMaxSummary class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "AverageSummary class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Task 2 answers": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
     }
 }
