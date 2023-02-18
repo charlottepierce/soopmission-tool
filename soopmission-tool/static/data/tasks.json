@@ -564,5 +564,38 @@
                 "restriction": "image/*"
             }
         }
+    },
+    "T2" : {
+        "name": "T2 - Semester Test Resit",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Arena class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Enemy class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "InvincibleEnemy class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "RegularEnemy class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Task 2 answers": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
     }
 }
