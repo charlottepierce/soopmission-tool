@@ -237,5 +237,68 @@
                 "restriction": "image/*"
             }
         }
+    },
+    "5.1P" : {
+        "name": "5.1P - In Person Check-in 2 - Drawing Program",
+        "upload_requirements": {
+            "Answer sheet": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+       }
+    },
+    "5.2P" : {
+        "name": "5.2P - Case Study - Iteration 3 - Bags",
+        "upload_requirements": {
+            "Bag class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Bag tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot showing unit tests passing": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
+    },
+    "5.3C" : {
+        "name": "5.3C - Drawing Program - Saving and Loading",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "ExtensionMethods class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Drawing class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Shape class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "MyRectangle class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "MyCircle class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "MyLine class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
     }
 }
