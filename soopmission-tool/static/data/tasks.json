@@ -300,5 +300,65 @@
                 "restriction": "image/*"
             }
         }
+    },
+    "6.1P" : {
+        "name": "6.1P - Case Study - Iteration 4 - Look Command",
+        "upload_requirements": {
+            "IHaveInventory interface": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Player class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Bag class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Command class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "LookCommand class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "LookCommand tests": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot showing unit tests passing": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
+    },
+    "6.2P" : {
+        "name": "6.2P - Key Object Oriented Concepts",
+        "upload_requirements": {
+            "Answer sheet": {
+                "type": "document",
+                "restriction": ".pdf"
+            }           
+        }
+    },
+    "6.3D" : {
+        "name": "6.3D - D Level Custom Program Initial Plan",
+        "upload_requirements": {
+            "Custom program plan": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
+    },
+    "6.5HD" : {
+        "name": "6.5HD - HD Level Custom Program Initial Plan",
+        "upload_requirements": {
+            "Custom program plan": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
     }
 }
