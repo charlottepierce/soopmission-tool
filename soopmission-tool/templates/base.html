@@ -30,6 +30,14 @@
         <script src="{{ url_for('static', filename='jquery-3.6.3.min.js') }}"></script>
         <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
 
+        <nav class="navbar bg-body-tertiary">
+            <div class="container" style="max-width: 36em">
+                <a class="navbar-brand" href="/">Format My Task</a>
+                {% if request.path != "/" %}
+                    <a class="btn btn-secondary" href="/">Back</a>
+                {% endif %}
+            </div>
+        </nav>
         <div class="container"  style="max-width: 36em">
             <header>
                 {% block header %}{% endblock %}
