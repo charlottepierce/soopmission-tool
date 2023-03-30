@@ -2,19 +2,77 @@
 {% block title %} - Upload Task {{ name }}{% endblock %}
 
 {% block header %}
-    <h1>Upload files for Task '{{ name }}'</h1>
+    <h3>Preparing Task '{{ name }}'</h3>
 {% endblock %}
 
+{% macro type_to_icon(type) %}
+    {% if type == "document" %}
+        <i class="fa-solid fa-lg fa-file-pdf"></i>
+    {% elif type == "image" %}
+        <i class="fa-solid fa-lg fa-file-image"></i>
+    {% elif type == "code" %}
+        <i class="fa-solid fa-lg fa-file-code"></i>
+    {% else %}
+        <i class="fa-solid fa-lg fa-file"></i>
+    {% endif %}
+{% endmacro %}
+
 {% block content %}
-    <div class="mx-auto" style="width: 500px;">
-        <form id="file-upload" action="{{ url_for('task_format.upload_task', task_id=task_id) }}" method="POST" enctype="multipart/form-data">
-            {% for requirement in upload_requirements %}
-                <div class="form-group" style="margin-bottom:10px; border-radius:10px;">
-                    <label for="{{ requirement }}">{{ requirement }} ({{ upload_requirements[requirement]['type'] }})</label>
-                    <input type="file" class="form-control" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" required/>
-                </div>
-            {% endfor %}
-            <input type="submit" id="submit-btn" class="btn btn-success" value="Format submission"/>
-        </form>
-    </div>
+    <form id="file-upload" action="{{ url_for('task_format.upload_task', task_id=task_id) }}" method="POST" enctype="multipart/form-data">
+        {% for requirement in upload_requirements %}
+            {% set type = upload_requirements[requirement]['type'] %}
+            <div class="form-group mb-4" style="margin-bottom:10px; border-radius:10px;">
+                <label for="{{ requirement }}" class="form-label">{{ type_to_icon(type) }} {{ requirement }}</label>
+
+                <input type="file" class="form-control" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" required/>
+
+                {% set help_id = (requirement | urlencode) + "-help" %}
+
+                {% if type == "document" %}
+                    <button type="button" class="btn btn-link btn-sm form-text p-0" data-bs-toggle="collapse"  data-bs-target="#{{ help_id }}">
+                        Help with 'document' uploads...
+                    </button>
+                    <div class="collapse" id="{{ help_id }}">
+                        <div class="card card-body">
+                            <p>You need to convert your document into a <code>.pdf</code> file before uploading.</p>
+                            <ul>
+                                <li>If you use Microsoft Office, follow <a href="https://support.microsoft.com/en-gb/office/d85416c5-7d77-4fd6-a216-6f4bf7c7c110" target="_blank">these instructions</a>.</li>
+                                <li>If you use Apple Pages, follow <a href="https://support.apple.com/en-au/HT202227" target="_blank">these instructions</a>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                {% elif type == "image" %}
+                    <button type="button" class="btn btn-link btn-sm form-text p-0" data-bs-toggle="collapse"  data-bs-target="#{{ help_id }}">
+                        Help with 'image' uploads...
+                    </button>
+                    <div class="collapse" id="{{ help_id }}">
+                        <div class="card card-body">
+                            <p>You need to provide either a <code>.jpg</code> file, a <code>.png</code> file, or some other common image file.</p>
+                            <ul>
+                                <li>If you use Windows, read <a href="https://support.microsoft.com/en-au/windows/00246869-1843-655f-f220-97299b865f6b" target="_blank">these instructions</a> for how to create screenshots.</li>
+                                <li>If you use macOS, read <a href="https://support.apple.com/en-au/guide/mac-help/mh26782" target="_blank">these instructions</a> for how to create screenshots.</li>
+                            </ul>
+                        </div>
+                    </div>
+                {% elif type == "code" %}
+                    <button type="button" class="btn btn-link btn-sm form-text p-0" data-bs-toggle="collapse"  data-bs-target="#{{ help_id }}">
+                        Help with 'code' uploads...
+                    </button>
+                    <div class="collapse" id="{{ help_id }}">
+                        <div class="card card-body m-0">
+                            <p>You need to provide the relevant <code>.cs</code> file.</p>
+                            <p>To find your code files you need to find your VS solution's directory on your computer.</p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" id="submit-btn" class="btn btn-primary">
+            <i class="fa-solid fa-file-export"></i>&ensp;Format &amp; Download Submission
+        </button>
+    </form>
+
+    <p class="mt-2">
+        <small><i class="fa-solid fa-triangle-exclamation text-warning"></i>&ensp;After formatting your submission you still need to upload the generated <code>.pdf</code> file to the task on Canvas.</small>
+    </p>
 {% endblock %}

@@ -6,14 +6,40 @@
 
         <title>OOP Submission Formatter{% block title %}{% endblock %}</title>
 
+        <script>
+            // Set theme to the user's preferred color scheme
+            function updateTheme() {
+            const colorMode = window.matchMedia("(prefers-color-scheme: dark)").matches ?
+                "dark" :
+                "light";
+            document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+            }
+
+            // Set theme on load
+            updateTheme()
+
+            // Update theme when the preferred scheme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme)
+        </script>
+
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+        <script src="https://kit.fontawesome.com/2788169a8b.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <script src="{{ url_for('static', filename='jquery-3.6.3.min.js') }}"></script>
         <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
 
-        <div class="container">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container" style="max-width: 36em">
+                <a class="navbar-brand" href="/">Format My Task</a>
+                {% if request.path != "/" %}
+                    <a class="btn btn-secondary btn-sm" href="/"><i class="fa-solid fa-arrow-left"></i>&ensp;Back</a>
+                {% endif %}
+            </div>
+        </nav>
+
+        <div class="container my-3"  style="max-width: 36em">
             <header>
                 {% block header %}{% endblock %}
             </header>
