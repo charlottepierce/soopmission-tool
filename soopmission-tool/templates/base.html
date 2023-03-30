@@ -13,14 +13,17 @@
         <script src="{{ url_for('static', filename='jquery-3.6.3.min.js') }}"></script>
         <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
 
-        <header class="text-center">
-            {% block header %}{% endblock %}
-        </header>
+        <div class="container">
+            <header>
+                {% block header %}{% endblock %}
+            </header>
+    
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-danger">{{ message }}</div>
+            {% endfor %}
+    
+            {% block content %}{% endblock %}
+        </div>
 
-        {% for message in get_flashed_messages() %}
-            <div class="alert alert-danger">{{ message }}</div>
-        {% endfor %}
-
-        {% block content %}{% endblock %}
     </body>
 </html>
