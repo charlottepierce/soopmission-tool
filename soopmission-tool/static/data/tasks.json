@@ -1,6 +1,7 @@
 {
     "1.1P" : {
-        "name": "1.1P: Preparing for Object Oriented Programming",
+        "code": "1.1P",
+        "name": "Preparing for Object Oriented Programming",
         "upload_requirements": {
             "Answer sheet": {
                 "type": "document",
@@ -9,7 +10,8 @@
         }
     },
     "1.2P" : {
-        "name": "1.2P - Object Oriented Hello World",
+        "code": "1.2P",
+        "name": "Object Oriented Hello World",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -30,7 +32,8 @@
         }
     },
     "2.1P" : {
-        "name": "2.1P - In Person Check-in 1 - Tools",
+        "code": "2.1P",
+        "name": "In Person Check-in 1 - Tools",
         "upload_requirements": {
             "Answer sheet": {
                 "type": "document",
@@ -51,7 +54,8 @@
         }
     },
     "2.2P" : {
-        "name": "2.2P - Counter Class",
+        "code": "2.2P",
+        "name": "Counter Class",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -68,7 +72,8 @@
         }
     },
     "2.3P" : {
-        "name": "2.3P - Drawing Program - A Basic Shape",
+        "code": "2.3P",
+        "name": "Drawing Program - A Basic Shape",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -85,7 +90,8 @@
         }
     },
     "2.4P" : {
-        "name": "2.4P - Case Study Iteration 1 - Identifiable Object",
+        "code": "2.4P",
+        "name": "Case Study Iteration 1 - Identifiable Object",
         "upload_requirements": {
             "IdentifiableObject class": {
                 "type": "code",
@@ -102,7 +108,8 @@
         }
     },
     "3.1P" : {
-        "name": "3.1P - Clock Class",
+        "code": "3.1P",
+        "name": "Clock Class",
         "upload_requirements": {
             "UML class diagram": {
                 "type": "image",
@@ -139,7 +146,8 @@
         }
     },
     "3.2P" : {
-        "name": "3.2P - The Stack and Heap",
+        "code": "3.2P",
+        "name": "The Stack and Heap",
         "upload_requirements": {
             "Answer sheet": {
                 "type": "document",
@@ -148,7 +156,8 @@
         }
     },
     "3.3P" : {
-        "name": "3.3P - Drawing Program - A Drawing Class",
+        "code": "3.3P",
+        "name": "Drawing Program - A Drawing Class",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -169,7 +178,8 @@
         }
     },
     "4.1P" : {
-        "name": "4.1P - Drawing Program - Multiple Shape Kinds",
+        "code": "4.1P",
+        "name": "Drawing Program - Multiple Shape Kinds",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -202,7 +212,8 @@
         }
     },
     "4.2P" : {
-        "name": "4.2P - Case Study - Iteration 2 - Players Items and Inventory",
+        "code": "4.2P",
+        "name": "Case Study - Iteration 2 - Players Items and Inventory",
         "upload_requirements": {
             "GameObject class": {
                 "type": "code",
@@ -239,7 +250,8 @@
         }
     },
     "5.1P" : {
-        "name": "5.1P - In Person Check-in 2 - Drawing Program",
+        "code": "5.1P",
+        "name": "In Person Check-in 2 - Drawing Program",
         "upload_requirements": {
             "Answer sheet": {
                 "type": "document",
@@ -248,7 +260,8 @@
        }
     },
     "5.2P" : {
-        "name": "5.2P - Case Study - Iteration 3 - Bags",
+        "code": "5.2P",
+        "name": "Case Study - Iteration 3 - Bags",
         "upload_requirements": {
             "Bag class": {
                 "type": "code",
@@ -265,7 +278,8 @@
         }
     },
     "5.3C" : {
-        "name": "5.3C - Drawing Program - Saving and Loading",
+        "code": "5.3C",
+        "name": "Drawing Program - Saving and Loading",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -302,7 +316,8 @@
         }
     },
     "6.1P" : {
-        "name": "6.1P - Case Study - Iteration 4 - Look Command",
+        "code": "6.1P",
+        "name": "Case Study - Iteration 4 - Look Command",
         "upload_requirements": {
             "IHaveInventory interface": {
                 "type": "code",
@@ -335,7 +350,8 @@
         }
     },
     "6.2P" : {
-        "name": "6.2P - Key Object Oriented Concepts",
+        "code": "6.2P",
+        "name": "Key Object Oriented Concepts",
         "upload_requirements": {
             "Answer sheet": {
                 "type": "document",
@@ -344,7 +360,8 @@
         }
     },
     "6.3D" : {
-        "name": "6.3D - D Level Custom Program Initial Plan",
+        "code": "6.3D",
+        "name": "D Level Custom Program Initial Plan",
         "upload_requirements": {
             "Custom program plan": {
                 "type": "document",
@@ -353,7 +370,8 @@
         }
     },
     "6.5HD" : {
-        "name": "6.5HD - HD Level Custom Program Initial Plan",
+        "code": "6.5HD",
+        "name": "HD Level Custom Program Initial Plan",
         "upload_requirements": {
             "Custom program plan": {
                 "type": "document",
@@ -362,7 +380,8 @@
         }
     },
     "7.1P" : {
-        "name": "7.1P - Case Study -  Iteration 5 - Tying it Together",
+        "code": "7.1P",
+        "name": "Case Study -  Iteration 5 - Tying it Together",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -375,7 +394,8 @@
         }
     },
     "7.2C" : {
-        "name": "7.2C - Case Study - Iteration 6 - Locations",
+        "code": "7.2C",
+        "name": "Case Study - Iteration 6 - Locations",
         "upload_requirements": {
             "Location class": {
                 "type": "code",
@@ -420,7 +440,8 @@
         }
     },
     "T1" : {
-        "name": "T1 - Semester Test",
+        "code": "T1",
+        "name": "Semester Test",
         "upload_requirements": {
             "UML class diagram": {
                 "type": "image",
@@ -457,7 +478,8 @@
         }
     },
     "9.1P" : {
-        "name": "9.1P - In Person Check-in 3 - Case Study",
+        "code": "9.1P",
+        "name": "In Person Check-in 3 - Case Study",
         "upload_requirements": {
             "Answer sheet": {
                 "type": "document",
@@ -466,7 +488,8 @@
         }
     },
     "9.2C" : {
-        "name": "9.2C - Case Study - Iteration 7 - Paths",
+        "code": "9.2C",
+        "name": "Case Study - Iteration 7 - Paths",
         "upload_requirements": {
             "Path class": {
                 "type": "code",
@@ -511,7 +534,8 @@
         }
     },
     "9.3HD" : {
-        "name": "9.3HD - Research Project Initial Plan",
+        "code": "9.3HD",
+        "name": "Research Project Initial Plan",
         "upload_requirements": {
             "Research plan": {
                 "type": "document",
@@ -520,7 +544,8 @@
         }
     },
     "10.1C" : {
-        "name": "10.1C - Case Study - Iteration 8 - Command Processor",
+        "code": "10.1C",
+        "name": "Case Study - Iteration 8 - Command Processor",
         "upload_requirements": {
             "Program class": {
                 "type": "code",
@@ -553,7 +578,8 @@
         }
     },
     "11.1P" : {
-        "name": "11.1P - Clock in Another Language",
+        "code": "11.1P",
+        "name": "Clock in Another Language",
         "upload_requirements": {
             "Code": {
                 "type": "code",
@@ -566,7 +592,8 @@
         }
     },
     "T2" : {
-        "name": "T2 - Semester Test Resit",
+        "code": "T2",
+        "name": "Semester Test Resit",
         "upload_requirements": {
             "Program class": {
                 "type": "code",

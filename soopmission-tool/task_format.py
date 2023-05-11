@@ -56,7 +56,7 @@ def upload_task(task_id):
                 return_data.seek(0)
             
             shutil.rmtree(processing_folder, ignore_errors=True)
-            return send_file(return_data, "application/pdf", True, task_name+".pdf")
+            return send_file(return_data, "application/pdf", True, f"{task_id} - {task_name}.pdf")
         else:
             shutil.rmtree(processing_folder, ignore_errors=True)
             flash("Something went wrong formatting your submission. Please check the files and try again. Make sure you uploaded all the required files, they don't use special characters, and they are in the correct format. If the issue persists please contact your convener.")
