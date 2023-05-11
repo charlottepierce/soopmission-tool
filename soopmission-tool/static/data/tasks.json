@@ -556,7 +556,7 @@
         "name": "11.1P - Clock in Another Language",
         "upload_requirements": {
             "Code": {
-                "type": "code",
+                "type": "code-other",
                 "restriction": ".txt"
             },
             "Screenshot of output": {

@@ -10,7 +10,7 @@
         <i class="fa-solid fa-lg fa-file-pdf"></i>
     {% elif type == "image" %}
         <i class="fa-solid fa-lg fa-file-image"></i>
-    {% elif type == "code" %}
+    {% elif type == "code" or type == "code-other" %}
         <i class="fa-solid fa-lg fa-file-code"></i>
     {% else %}
         <i class="fa-solid fa-lg fa-file"></i>
@@ -62,6 +62,16 @@
                         <div class="card card-body m-0">
                             <p>You need to provide the relevant <code>.cs</code> file.</p>
                             <p>To find your code files you need to find your VS solution's directory on your computer.</p>
+                        </div>
+                    </div>
+                {% elif type == "code-other" %}
+                    <button type="button" class="btn btn-link btn-sm form-text p-0" data-bs-toggle="collapse"  data-bs-target="#{{ help_id }}">
+                        Help with 'code' uploads...
+                    </button>
+                    <div class="collapse" id="{{ help_id }}">
+                        <div class="card card-body m-0">
+                            <p>You need to provide the relevant source file.</p>
+                            <p>To find your code files you need to find your project's directory on your computer.</p>
                         </div>
                     </div>
                 {% endif %}
