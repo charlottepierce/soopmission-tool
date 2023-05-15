@@ -63,7 +63,7 @@
     \fancyhead[R]{ ${f.name} }
 
     % if f.type == "code":
-        \inputminted[breaklines,linenos,breakanywhere,tabsize=4]{${f.pygments_lang()}}{${f.file_path}}
+        \inputminted[breaklines,linenos,tabsize=4]{${f.pygments_lang()}}{${f.file_path}}
     % elif f.type == "image":
         \includegraphics[width=\textwidth]{${f.file_path}}
     % elif f.type == "document":
