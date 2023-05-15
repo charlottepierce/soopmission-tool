@@ -582,8 +582,8 @@
         "name": "Clock in Another Language",
         "upload_requirements": {
             "Code": {
-                "type": "code",
-                "restriction": ".txt",
+                "type": "code-other",
+                "restriction": ".txt"
                 "note": "You will need to merge all of your code into one file."
             },
             "Screenshot of output": {
