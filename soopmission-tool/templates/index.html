@@ -8,7 +8,11 @@
     <ul class="list-group my-3">
         {% for task in task_data %}
             <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                <span>{{ task_data[task]['name'] }}</span>
+                <div class="d-flex d-align-items-center">
+                    <h5 style="min-width: 2.25em" class="m-0">{{ task_data[task]['code'] }}</h5>
+                    &ensp;
+                    <span>{{ task_data[task]['name'] }}</span>
+                </div>
                 <a type="button" class="btn btn-primary btn-sm stretched-link ms-3" href="{{ url_for('task_format.upload_task', task_id=task) }}">
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
