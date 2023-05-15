@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>OOP Submission Formatter{% block title %}{% endblock %}</title>
+        <title>{% block title %}{% endblock %}OOP Submission Formatter</title>
 
         <script>
             // Set theme to the user's preferred color scheme
@@ -40,7 +40,7 @@
         </nav>
 
         <div class="container my-3"  style="max-width: 36em">
-            <header>
+            <header class="mb-3">
                 {% block header %}{% endblock %}
             </header>
     

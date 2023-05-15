@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-{% block title %} - Upload Task {{ name }}{% endblock %}
+{% block title %}Task {{ task_id }} &middot; {% endblock %}
 
 {% block header %}
-    <h3>Preparing Task '{{ name }}'</h3>
+    <h3>Preparing Task {{ task_id }}</h3>
+    <h4 class="text-muted">{{ name }}</h4>
 {% endblock %}
 
 {% macro type_to_icon(type) %}
@@ -26,6 +27,10 @@
 
                 <input type="file" class="form-control" id="{{ requirement }}" name="{{ requirement }}" accept="{{ upload_requirements[requirement]['restriction'] }}" required/>
 
+                {% if upload_requirements[requirement]['note'] %}
+                    <div class="form-text"><i class="fa-solid fa-circle-info text-info"></i>&ensp;{{ upload_requirements[requirement]['note'] }}</div>
+                {% endif %}
+
                 {% set help_id = (requirement | urlencode) + "-help" %}
 
                 {% if type == "document" %}
@@ -35,7 +40,7 @@
                     <div class="collapse" id="{{ help_id }}">
                         <div class="card card-body">
                             <p>You need to convert your document into a <code>.pdf</code> file before uploading.</p>
-                            <ul>
+                            <ul class="mb-0">
                                 <li>If you use Microsoft Office, follow <a href="https://support.microsoft.com/en-gb/office/d85416c5-7d77-4fd6-a216-6f4bf7c7c110" target="_blank">these instructions</a>.</li>
                                 <li>If you use Apple Pages, follow <a href="https://support.apple.com/en-au/HT202227" target="_blank">these instructions</a>.</li>
                             </ul>
@@ -48,7 +53,7 @@
                     <div class="collapse" id="{{ help_id }}">
                         <div class="card card-body">
                             <p>You need to provide either a <code>.jpg</code> file, a <code>.png</code> file, or some other common image file.</p>
-                            <ul>
+                            <ul class="mb-0">
                                 <li>If you use Windows, read <a href="https://support.microsoft.com/en-au/windows/00246869-1843-655f-f220-97299b865f6b" target="_blank">these instructions</a> for how to create screenshots.</li>
                                 <li>If you use macOS, read <a href="https://support.apple.com/en-au/guide/mac-help/mh26782" target="_blank">these instructions</a> for how to create screenshots.</li>
                             </ul>
@@ -61,7 +66,7 @@
                     <div class="collapse" id="{{ help_id }}">
                         <div class="card card-body m-0">
                             <p>You need to provide the relevant <code>.cs</code> file.</p>
-                            <p>To find your code files you need to find your VS solution's directory on your computer.</p>
+                            <p class="mb-0">To find your code files you need to find your VS solution's directory on your computer.</p>
                         </div>
                     </div>
                 {% endif %}
