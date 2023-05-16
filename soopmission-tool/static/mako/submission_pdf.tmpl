@@ -62,7 +62,7 @@
     \fancyhead[L]{ File ${loop.index + 1} of ${len(files)} }
     \fancyhead[R]{ ${f.name} }
 
-    % if f.type == "code":
+    % if f.type == "code" or f.type == "code-other":
         \inputminted[breaklines,linenos,tabsize=4]{${f.pygments_lang()}}{${f.file_path}}
     % elif f.type == "image":
         \includegraphics[width=\textwidth]{${f.file_path}}
