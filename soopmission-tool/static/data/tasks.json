@@ -277,44 +277,6 @@
             }
         }
     },
-    "5.3C" : {
-        "code": "5.3C",
-        "name": "Drawing Program - Saving and Loading",
-        "upload_requirements": {
-            "Program class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "ExtensionMethods class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "Drawing class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "Shape class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "MyRectangle class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "MyCircle class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "MyLine class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "Screenshot of output": {
-                "type": "image",
-                "restriction": "image/*"
-            }
-        }
-    },
     "6.1P" : {
         "code": "6.1P",
         "name": "Case Study - Iteration 4 - Look Command",
@@ -359,31 +321,74 @@
             }           
         }
     },
-    "6.3D" : {
-        "code": "6.3D",
-        "name": "D Level Custom Program Initial Plan",
-        "upload_requirements": {
-            "Custom program plan": {
-                "type": "document",
-                "restriction": ".pdf"
-            }
-        }
-    },
-    "6.5HD" : {
-        "code": "6.5HD",
-        "name": "HD Level Custom Program Initial Plan",
-        "upload_requirements": {
-            "Custom program plan": {
-                "type": "document",
-                "restriction": ".pdf"
-            }
-        }
-    },
     "7.1P" : {
         "code": "7.1P",
         "name": "Case Study -  Iteration 5 - Tying it Together",
         "upload_requirements": {
             "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
+    },
+    "9.1P" : {
+        "code": "9.1P",
+        "name": "In Person Check-in 3 - Case Study",
+        "upload_requirements": {
+            "Answer sheet": {
+                "type": "document",
+                "restriction": ".pdf"
+            }           
+        }
+    },
+    "11.1P" : {
+        "code": "11.1P",
+        "name": "Clock in Another Language",
+        "upload_requirements": {
+            "Code": {
+                "type": "code-other",
+                "restriction": ".txt",
+                "note": "You will need to merge all of your code into one file."
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            }
+        }
+    },
+    "5.3C" : {
+        "code": "5.3C",
+        "name": "Drawing Program - Saving and Loading",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "ExtensionMethods class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Drawing class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Shape class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "MyRectangle class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "MyCircle class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "MyLine class": {
                 "type": "code",
                 "restriction": ".cs"
             },
@@ -439,54 +444,6 @@
             }
         }
     },
-    "T1" : {
-        "code": "T1",
-        "name": "Semester Test",
-        "upload_requirements": {
-            "UML class diagram": {
-                "type": "image",
-                "restriction": "image/*"
-            },
-            "Program class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "DataAnalyser class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "SummaryStrategy class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "MinMaxSummary class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "AverageSummary class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "Screenshot of output": {
-                "type": "image",
-                "restriction": "image/*"
-            },
-            "Task 2 answers": {
-                "type": "document",
-                "restriction": ".pdf"
-            }
-        }
-    },
-    "9.1P" : {
-        "code": "9.1P",
-        "name": "In Person Check-in 3 - Case Study",
-        "upload_requirements": {
-            "Answer sheet": {
-                "type": "document",
-                "restriction": ".pdf"
-            }           
-        }
-    },
     "9.2C" : {
         "code": "9.2C",
         "name": "Case Study - Iteration 7 - Paths",
@@ -533,16 +490,6 @@
             }
         }
     },
-    "9.3HD" : {
-        "code": "9.3HD",
-        "name": "Research Project Initial Plan",
-        "upload_requirements": {
-            "Research plan": {
-                "type": "document",
-                "restriction": ".pdf"
-            }           
-        }
-    },
     "10.1C" : {
         "code": "10.1C",
         "name": "Case Study - Iteration 8 - Command Processor",
@@ -577,53 +524,34 @@
             }
         }
     },
-    "11.1P" : {
-        "code": "11.1P",
-        "name": "Clock in Another Language",
+    "6.3D" : {
+        "code": "6.3D",
+        "name": "D Level Custom Program Initial Plan",
         "upload_requirements": {
-            "Code": {
-                "type": "code-other",
-                "restriction": ".txt",
-                "note": "You will need to merge all of your code into one file."
-            },
-            "Screenshot of output": {
-                "type": "image",
-                "restriction": "image/*"
-            }
-        }
-    },
-    "T2" : {
-        "code": "T2",
-        "name": "Semester Test Resit",
-        "upload_requirements": {
-            "Program class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "Arena class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "Enemy class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "InvincibleEnemy class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "RegularEnemy class": {
-                "type": "code",
-                "restriction": ".cs"
-            },
-            "Screenshot of output": {
-                "type": "image",
-                "restriction": "image/*"
-            },
-            "Task 2 answers": {
+            "Custom program plan": {
                 "type": "document",
                 "restriction": ".pdf"
             }
+        }
+    },
+    "6.5HD" : {
+        "code": "6.5HD",
+        "name": "HD Level Custom Program Initial Plan",
+        "upload_requirements": {
+            "Custom program plan": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
+    },
+    "9.3HD" : {
+        "code": "9.3HD",
+        "name": "Research Project Initial Plan",
+        "upload_requirements": {
+            "Research plan": {
+                "type": "document",
+                "restriction": ".pdf"
+            }           
         }
     }
 }
