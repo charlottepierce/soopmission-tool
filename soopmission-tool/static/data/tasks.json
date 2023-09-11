@@ -1,4 +1,42 @@
 {
+    "T1" : {
+	"code" : "T1",
+	"name": "Semester test",
+	"upload_requirements" : {
+            "UML class diagram": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "FileSystem class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Thing class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Folder class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "File class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Part 2 answers": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+	}
+    },
     "1.1P" : {
         "code": "1.1P",
         "name": "Preparing for Object Oriented Programming",
