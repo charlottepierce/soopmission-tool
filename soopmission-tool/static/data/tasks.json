@@ -1,9 +1,9 @@
 {
     "T1" : {
-	"code" : "T1",
-	"name": "Semester test",
-	"upload_requirements" : {
-            "UML class diagram": {
+        "code" : "T1",
+        "name": "Semester test",
+        "upload_requirements" : {
+                "UML class diagram": {
                 "type": "image",
                 "restriction": "image/*"
             },
@@ -35,7 +35,41 @@
                 "type": "document",
                 "restriction": ".pdf"
             }
-	}
+	    }
+    },
+    "T2" : {
+        "code": "T2",
+        "name": "Semester Test Resit",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Arena class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Enemy class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "InvincibleEnemy class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "RegularEnemy class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Task 2 answers": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
     },
     "1.1P" : {
         "code": "1.1P",
