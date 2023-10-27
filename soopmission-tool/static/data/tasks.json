@@ -71,6 +71,40 @@
             }
         }
     },
+    "T3" : {
+        "code": "T3",
+        "name": "Semester Test Supplementary",
+        "upload_requirements": {
+            "Program class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Cannon class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Shootable class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Cannonball class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Cat class": {
+                "type": "code",
+                "restriction": ".cs"
+            },
+            "Screenshot of output": {
+                "type": "image",
+                "restriction": "image/*"
+            },
+            "Task 2 answers": {
+                "type": "document",
+                "restriction": ".pdf"
+            }
+        }
+    },
     "1.1P" : {
         "code": "1.1P",
         "name": "Preparing for Object Oriented Programming",
